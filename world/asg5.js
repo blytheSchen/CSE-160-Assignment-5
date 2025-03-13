@@ -61,7 +61,7 @@ function main() {
 
 	{ // skybox
 		const skyTexture = loader.load(
-		'../resources/images/industrial_sunset_puresky.jpg',
+		'./resources/images/industrial_sunset_puresky.jpg',
 		() => {
 			skyTexture.mapping = THREE.EquirectangularReflectionMapping;
 			skyTexture.colorSpace = THREE.SRGBColorSpace;
@@ -132,7 +132,7 @@ function main() {
 	}
 
 	{ // billboard
-		const spriteTexture = loader.load( '../resources/images/cat-emoji.png' );
+		const spriteTexture = loader.load( './resources/images/cat-emoji.png' );
 		const spriteMaterial = new THREE.SpriteMaterial({
 			map: spriteTexture,
 			transparent: true,
