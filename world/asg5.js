@@ -61,7 +61,7 @@ function main() {
 
 	{ // skybox
 		const skyTexture = loader.load(
-		'../resources/images/industrial_sunset_puresky.jpg',
+		'resources/images/industrial_sunset_puresky.jpg',
 		() => {
 			skyTexture.mapping = THREE.EquirectangularReflectionMapping;
 			skyTexture.colorSpace = THREE.SRGBColorSpace;
@@ -119,10 +119,10 @@ function main() {
 	{ // imported 3D model (cat)
 		const objLoader = new OBJLoader();
 		const mtlLoader = new MTLLoader();
-		mtlLoader.load('../resources/models/cat/12221_Cat_v1_l3.mtl', (mtl) => {
+		mtlLoader.load('resources/models/cat/12221_Cat_v1_l3.mtl', (mtl) => {
 			mtl.preload();
 			objLoader.setMaterials(mtl);
-		objLoader.load('../resources/models/cat/12221_Cat_v1_l3.obj', (root) => {
+		objLoader.load('resources/models/cat/12221_Cat_v1_l3.obj', (root) => {
 			scene.add(root);
 			root.position.z = -1;
 			root.rotation.x = Math.PI * - .5;
@@ -132,7 +132,7 @@ function main() {
 	}
 
 	{ // billboard
-		const spriteTexture = loader.load( '../resources/images/cat-emoji.png' );
+		const spriteTexture = loader.load( 'resources/images/cat-emoji.png' );
 		const spriteMaterial = new THREE.SpriteMaterial({
 			map: spriteTexture,
 			transparent: true,
@@ -160,7 +160,7 @@ function main() {
 	// shadows
 	const shadowBases = [];
 
-	const shadowTexture = loader.load('../resources/images/roundshadow.png');
+	const shadowTexture = loader.load('resources/images/roundshadow.png');
 	const sphereRadius = 1;
 	const planeSize = 1;
 	const shadowGeo = new THREE.PlaneGeometry(planeSize, planeSize);
@@ -171,15 +171,15 @@ function main() {
 
 	{ // boxes (cubes and rectangular prisms)
 		makeColorBox(1, 1, 1, 0x44aa88, -2, 1, 3, 'spinny');
-		makeSingleTexturedBox(1, 1, 1, '../resources/images/wall.jpg', 0, 1, 3, 'spinny');
+		makeSingleTexturedBox(1, 1, 1, 'resources/images/wall.jpg', 0, 1, 3, 'spinny');
 
 		const multiBox1Materials = [
-			new THREE.MeshBasicMaterial({map: loadColorTexture('../resources/images/flower-1.jpg')}),
-			new THREE.MeshBasicMaterial({map: loadColorTexture('../resources/images/flower-2.jpg')}),
-			new THREE.MeshBasicMaterial({map: loadColorTexture('../resources/images/flower-3.jpg')}),
-			new THREE.MeshBasicMaterial({map: loadColorTexture('../resources/images/flower-4.jpg')}),
-			new THREE.MeshBasicMaterial({map: loadColorTexture('../resources/images/flower-5.jpg')}),
-			new THREE.MeshBasicMaterial({map: loadColorTexture('../resources/images/flower-6.jpg')}),
+			new THREE.MeshBasicMaterial({map: loadColorTexture('resources/images/flower-1.jpg')}),
+			new THREE.MeshBasicMaterial({map: loadColorTexture('resources/images/flower-2.jpg')}),
+			new THREE.MeshBasicMaterial({map: loadColorTexture('resources/images/flower-3.jpg')}),
+			new THREE.MeshBasicMaterial({map: loadColorTexture('resources/images/flower-4.jpg')}),
+			new THREE.MeshBasicMaterial({map: loadColorTexture('resources/images/flower-5.jpg')}),
+			new THREE.MeshBasicMaterial({map: loadColorTexture('resources/images/flower-6.jpg')}),
 		];
 		makeMultiTexturedBox(1, 1, 1, multiBox1Materials, 2, 1, 3, 'spinny');
 		makeColorBox(0.5, 0.5, 0.5, 0x4d79ff, -4, 0, 3, 'all');
