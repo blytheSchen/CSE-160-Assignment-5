@@ -1,0 +1,39 @@
+<b>Blythe Chen</b>
+<br><b>blschen@ucsc.edu</b>
+<br><br><b>Notes to Grader:</b>
+<br>3 lighting types: ambient, hemisphere, directional
+<br>3 extras: fog, shadows, billboard
+<br>Imported 3D model: https://free3d.com/3d-model/cat-v1--522281.html
+<br><br>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Assignment 5</title>
+		<style>
+			body { margin: 0; }
+		</style>
+        
+	</head>
+	<body>
+        <canvas id="c"></canvas>
+			<div id="loading">
+				<div class="progress"><div class="progressbar"></div></div>
+		  	</div>
+			<div class="split">
+				<div id="view1" tabindex="1"></div>
+				<div id="view2" tabindex="2"></div>
+			</div>
+        <script type="importmap">
+            {
+              "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@v0.174.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.174.0/examples/jsm/"
+              }
+            }
+        </script>
+		<script src="./world/MinMaxGUIHelper.js"></script>
+		<script src="./world/ColorGUIHelper.js"></script>
+		<script type="module" src="./world/asg5.js"></script>
+	</body>
+</html>
